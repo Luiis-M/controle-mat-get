@@ -7,7 +7,7 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'cadastro', component: RegisterComponent }
+  { path: 'cadastro', pathMatch: 'full', component: RegisterComponent }
   // outras rotas dentro do módulo admin podem ser adicionadas aqui
 ];
 
@@ -19,7 +19,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ]
 })
 export class AuthModule { }
