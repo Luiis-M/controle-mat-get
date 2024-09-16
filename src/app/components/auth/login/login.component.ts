@@ -17,7 +17,7 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe({
       next: (user) => {
         console.log('Usuário logado', user);
-        this.router.navigate(['/auth/cadastro']);  // Redireciona após login bem-sucedido
+        this.router.navigate(['./components/home/home.component']);  // Redireciona após login bem-sucedido
       },
       error: (error) => {
         console.error('Erro ao fazer login', error);

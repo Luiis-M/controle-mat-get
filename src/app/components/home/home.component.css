@@ -1,0 +1,19 @@
+.card {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .btn-primary {
+    background-color: #0D3A4C;
+    border-color: #0D3A4C;
+    margin: 4px;
+  }
+  
