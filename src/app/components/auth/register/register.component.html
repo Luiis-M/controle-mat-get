@@ -38,36 +38,72 @@
         </svg>
       </div>
       <h3 class="text-center mb-4">Cadastro</h3>
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Nome Completo</label>
-          <input type="text" class="form-control" id="name" placeholder="Digite seu nome completo">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite seu email">
-        </div>
-        <div class="mb-3">
-          <label for="setor" class="form-label">Setor</label>
-          <input type="text" class="form-control" id="setor" placeholder="Digite seu setor">
-        </div>
-        <div class="mb-3 position-relative">
-          <label for="password" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
-          <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer;">
-            <i id="togglePassword" class="bi bi-eye-slash"></i>
-          </span>
-        </div>
-        <div class="mb-3 position-relative">
-          <label for="confirmPassword" class="form-label">Confirmar Senha</label>
-          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha">
-          <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer;">
-            <i id="toggleConfirmPassword" class="bi bi-eye-slash"></i>
-          </span>
-        </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Cadastrar-se</button>
-        </div>
-      </form>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+          placeholder="Digite seu nome completo"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          placeholder="Digite seu email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="setor" class="form-label">Setor</label>
+        <select class="form-control" id="setor" formControlName="setor">
+          <option value="">Selecione seu setor</option>
+          <option value="desenvolvimento">Desenvolvimento</option>
+          <option value="negocios">Negócios</option>
+          <option value="atendimento ao cliente">Atendimento ao Cliente</option>
+          <option value="administração">Administração</option>
+          <option value="produto">Produto</option>
+        </select>
+      </div>
+      <div class="mb-3 position-relative">
+        <label for="password" class="form-label">Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Digite sua senha"
+        />
+        <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer;">
+          <i id="togglePassword" class="bi bi-eye-slash"></i>
+        </span>
+      </div>
+      <div class="mb-3 position-relative">
+        <label for="confirmPassword" class="form-label">Confirmar Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          placeholder="Confirme sua senha"
+        />
+        <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer;">
+          <i id="toggleConfirmPassword" class="bi bi-eye-slash"></i>
+        </span>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Cadastrar-se</button>
+      </div>
+    </form>
+
+    <!-- Exibe a mensagem de erro se existir -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
     </div>
   </div>
+</div>
