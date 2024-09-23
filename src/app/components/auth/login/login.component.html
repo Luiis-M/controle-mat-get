@@ -52,6 +52,9 @@
           <button type="button" class="btn btn-primary" (click)="goToRegister()">Cadastrar-se</button>
         </div>
       </form>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        <p>USUÁRIO NÃO ENCONTRADO</p>
+      </div>
     </div>
   </div>
 

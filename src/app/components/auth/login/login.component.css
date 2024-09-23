@@ -7,4 +7,8 @@
     border-color: #0D3A4C;
     margin: 4px;
   }
+
+  .alert-danger, mt-3 {
+    color: red;
+  }
   
