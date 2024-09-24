@@ -1,0 +1,36 @@
+<form [formGroup]="ativosForm!" (ngSubmit)="onSubmit()">
+  <label>Proprietário</label>
+  <input formControlName="proprietario" />
+
+  <label>Responsável</label>
+  <input formControlName="responsavel" />
+
+  <label>Grupo</label>
+  <input formControlName="grupo" />
+
+  <label>NF</label>
+  <input formControlName="nf" />
+
+  <label>Ano de Compra</label>
+  <input formControlName="anoCompra" type="number" />
+
+  <label>Código do Ativo</label>
+  <input formControlName="codigoAtivo" />
+
+  <label>Marca</label>
+  <input formControlName="marca" />
+
+  <label>NS</label>
+  <input formControlName="ns" />
+
+  <label>Tipo</label>
+  <input formControlName="tipo" />
+
+  <label>Sistema Operacional</label>
+  <input formControlName="sistemaOperacional" />
+
+  <label>Localização</label>
+  <input formControlName="localizacao" />
+
+  <button type="submit" [disabled]="ativosForm!.invalid">Cadastrar Material</button>
+</form>
