@@ -1,36 +1,64 @@
-<form [formGroup]="ativosForm!" (ngSubmit)="onSubmit()">
-  <label>Proprietário</label>
-  <input formControlName="proprietario" />
+<form [formGroup]="ativosForm!" (ngSubmit)="onSubmit()" class="container mt-4">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="proprietario" class="form-label">Proprietário</label>
+      <input id="proprietario" formControlName="proprietario" class="form-control" />
+    </div>
 
-  <label>Responsável</label>
-  <input formControlName="responsavel" />
+    <div class="col-md-6">
+      <label for="responsavel" class="form-label">Responsável</label>
+      <input id="responsavel" formControlName="responsavel" class="form-control" />
+    </div>
 
-  <label>Grupo</label>
-  <input formControlName="grupo" />
+    <div class="col-md-6">
+      <label for="grupo" class="form-label">Grupo</label>
+      <input id="grupo" formControlName="grupo" class="form-control" />
+    </div>
 
-  <label>NF</label>
-  <input formControlName="nf" />
+    <div class="col-md-6">
+      <label for="nf" class="form-label">NF</label>
+      <input id="nf" formControlName="nf" class="form-control" />
+    </div>
 
-  <label>Ano de Compra</label>
-  <input formControlName="anoCompra" type="number" />
+    <div class="col-md-6">
+      <label for="anoCompra" class="form-label">Ano de Compra</label>
+      <input id="anoCompra" formControlName="anoCompra" type="number" class="form-control" />
+    </div>
 
-  <label>Código do Ativo</label>
-  <input formControlName="codigoAtivo" />
+    <div class="col-md-6">
+      <label for="codigoAtivo" class="form-label">Código do Ativo</label>
+      <input id="codigoAtivo" formControlName="codigoAtivo" class="form-control" />
+    </div>
 
-  <label>Marca</label>
-  <input formControlName="marca" />
+    <div class="col-md-6">
+      <label for="marca" class="form-label">Marca</label>
+      <input id="marca" formControlName="marca" class="form-control" />
+    </div>
 
-  <label>NS</label>
-  <input formControlName="ns" />
+    <div class="col-md-6">
+      <label for="ns" class="form-label">NS</label>
+      <input id="ns" formControlName="ns" class="form-control" />
+    </div>
 
-  <label>Tipo</label>
-  <input formControlName="tipo" />
+    <div class="col-md-6">
+      <label for="tipo" class="form-label">Tipo</label>
+      <input id="tipo" formControlName="tipo" class="form-control" />
+    </div>
 
-  <label>Sistema Operacional</label>
-  <input formControlName="sistemaOperacional" />
+    <div class="col-md-6">
+      <label for="sistemaOperacional" class="form-label">Sistema Operacional</label>
+      <input id="sistemaOperacional" formControlName="sistemaOperacional" class="form-control" />
+    </div>
 
-  <label>Localização</label>
-  <input formControlName="localizacao" />
+    <div class="col-md-6">
+      <label for="localizacao" class="form-label">Localização</label>
+      <input id="localizacao" formControlName="localizacao" class="form-control" />
+    </div>
 
-  <button type="submit" [disabled]="ativosForm!.invalid">Cadastrar Material</button>
+    <div class="col-12">
+      <button type="submit" [disabled]="ativosForm!.invalid" class="btn btn-primary w-100">
+        Cadastrar Material
+      </button>
+    </div>
+  </div>
 </form>

@@ -9,7 +9,44 @@ import { AuthenticationService } from '../../_services/authentication.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private authService: AuthenticationService, private router: Router) { }
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) { }
+
+  // Array de objetos que define os cards exibidos na página inicial
+  cards = [
+    {
+      title: 'Notebooks',
+      icon: 'laptop', // Ícone principal do card
+      linkText: 'Ver mais',
+      link: '/notebooks',
+    },
+    {
+      title: 'Dispositivos de Rede',
+      icon: 'router',
+      linkText: 'Ver mais',
+      link: '/dispositivos-de-rede',
+    },
+    {
+      title: 'Impressoras',
+      icon: 'print',
+      linkText: 'Ver mais',
+      link: '/impressoras',
+    },
+    {
+      title: 'Periféricos',
+      icon: 'mouse',
+      linkText: 'Ver mais',
+      link: '/perifericos',
+    },
+    {
+      title: 'Novos itens',
+      icon: 'add_circle',
+      buttonText: 'Cadastrar',
+      action: () => this.cadastrar(), // Ação que chama o método cadastrar()
+    },
+  ];
 
   onLogout() {
     this.authService.logout().subscribe({
